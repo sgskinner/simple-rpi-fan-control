@@ -62,7 +62,12 @@ Carefully remove both the black (Ground) and yellow (+5V) wires from the fan's c
 
 2.  **Install pigpio and Python Client:** This installs the `pigpio` daemon and the Python library needed to interact with it.
     ```bash
-    sudo apt install pigpio python3-pigpio
+    sudo apt install -y python3-setuptools python3-full
+    wget https://github.com/joan2937/pigpio/archive/refs/tags/v79.tar.gz
+    tar zxf v79.tar.gz
+    cd pigpio-79
+    make
+    sudo make install
     ```
 
 3.  **Enable and Start the pigpio Daemon:** The Python script needs the `pigpiod` service running in the background. Enabling ensures it starts on boot.
